@@ -10,6 +10,13 @@ class Migration(migrations.Migration):
     operations = [
         migrations.CreateModel(
 
+            name='Curso',
+            fields=[
+                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
+                ('nome', models.CharField(max_length=45)),
+                ('descricao', models.CharField(max_length=100)),
+            ]
+
             name='Aluno',
             fields=[
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
