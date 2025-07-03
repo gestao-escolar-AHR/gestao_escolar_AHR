@@ -1,3 +1,5 @@
+import django.db.models.deletion
+
 from django.db import migrations, models
 
 class Migration(migrations.Migration):
@@ -42,5 +44,17 @@ class Migration(migrations.Migration):
                 ('nome', models.CharField(max_length=45)),
                 ('descricao', models.CharField(max_length=45)),
             ],
+
+            name='Nota',
+            fields=[
+                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
+                ('nota', models.DecimalField(decimal_places=2, max_digits=4, verbose_name='')),
+                ('disciplina', models.ForeignKey(on_delete=django.db.models.deletion.PROTECT, to='gestao_escolar.disciplina')),
+            ],
+        ),
+        migrations.AddField(
+            model_name='disciplina',
+            name='professor',
+            field=models.ForeignKey(on_delete=django.db.models.deletion.PROTECT, to='gestao_escolar.professor'),
         ),
     ]
