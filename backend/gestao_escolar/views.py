@@ -1,7 +1,7 @@
 from rest_framework.viewsets import ModelViewSet
 
-from .models import Curso, Aluno, Disciplina, Professor
-from .serializers import CursoSerializer, AlunoSerializer, DisciplinaSerializer, ProfessorSerializer
+from .models import Curso, Aluno, Disciplina, Professor, Nota
+from .serializers import CursoSerializer, AlunoSerializer, DisciplinaSerializer, ProfessorSerializer, NotaSerializer
 
 class CursoViewSet(ModelViewSet):
     queryset = Curso.objects.all()
@@ -18,3 +18,7 @@ class DisciplinaViewSet(ModelViewSet):
 class ProfessorViewSet(ModelViewSet):
     queryset = Professor.objects.all()
     serializer_class = ProfessorSerializer
+    
+class NotaViewSet(ModelViewSet):
+    queryset = Nota.objects.all()
+    serializer_class = NotaSerializer
