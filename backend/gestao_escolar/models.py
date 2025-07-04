@@ -57,3 +57,8 @@ class Matricula (models.Model):
     def __str__(self):
         return f'{self.aluno.nome} - {self.data_matricula}'
 
+class Frequencia (models.Model):
+    data = models.DateField(null=True)
+    aluno = models.ForeignKey(Aluno, on_delete=models.PROTECT)
+   # turma = models.ForeignKey(Turma, on_delete=models.PROTECT)
+    
