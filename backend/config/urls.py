@@ -2,7 +2,7 @@ from django.contrib import admin
 from django.urls import include, path
 from rest_framework.routers import DefaultRouter
 
-from gestao_escolar.views import CursoViewSet, AlunoViewSet, DisciplinaViewSet, ProfessorViewSet, NotaViewSet, MatriculaViewSet, TurmaViewSet
+from gestao_escolar.views import CursoViewSet, AlunoViewSet, DisciplinaViewSet, ProfessorViewSet, NotaViewSet, MatriculaViewSet, TurmaViewSet, AulaViewSet
 
 router = DefaultRouter()
 
@@ -13,6 +13,7 @@ router.register(r'professores', ProfessorViewSet)
 router.register(r'notas', NotaViewSet)
 router.register(r'matriculas', MatriculaViewSet)
 router.register(r'turmas', TurmaViewSet)
+router.register(r'aulas', AulaViewSet)
 
 urlpatterns = [
     path('api/', include(router.urls)),
