@@ -72,4 +72,11 @@ class Aula (models.Model):
 
     def __str__(self):
         return f'{self.turma.sala_turma} - {self.disciplina.nome}'
+    
+class Frequencia (models.Model):
+    data = models.DateField(null=True)
+    aluno = models.ForeignKey(Aluno, on_delete=models.PROTECT)
+    turma = models.ForeignKey(Turma, on_delete=models.PROTECT, null=True)
+    
+    
 
