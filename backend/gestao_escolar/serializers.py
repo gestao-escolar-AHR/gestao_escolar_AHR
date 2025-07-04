@@ -46,3 +46,5 @@ class FrequenciaSerializer(ModelSerializer):
     class Meta:
         models = Frequencia
         fields = '__all__'
+        
+        

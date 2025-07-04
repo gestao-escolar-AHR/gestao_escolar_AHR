@@ -31,6 +31,10 @@ class Professor (models.Model):
     def __str__(self):
         return f'{self.nome} - {self.email}'
     
+    class Meta:
+        verbose_name = 'Professor'
+        verbose_name_plural = 'Professores'
+    
 class Turma(models.Model):
     quantidade_alunos = models.IntegerField(default=0)
     sala_turma = models.CharField(max_length=45)
@@ -66,6 +70,9 @@ class Matricula (models.Model):
     def __str__(self):
         return f'{self.aluno.nome} - {self.data_matricula}'
     
+    class Meta: 
+        verbose_name = 'Matrícula'
+    
 class Aula (models.Model):
     turma = models.ForeignKey(Turma, on_delete=models.PROTECT, null=True)
     disciplina = models.ForeignKey(Disciplina, on_delete=models.PROTECT)
@@ -77,6 +84,9 @@ class Frequencia (models.Model):
     data = models.DateField(null=True)
     aluno = models.ForeignKey(Aluno, on_delete=models.PROTECT)
     turma = models.ForeignKey(Turma, on_delete=models.PROTECT, null=True)
+    
+    class Meta: 
+        verbose_name = 'Frequência'
     
     
 
