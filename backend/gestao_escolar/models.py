@@ -65,4 +65,11 @@ class Matricula (models.Model):
 
     def __str__(self):
         return f'{self.aluno.nome} - {self.data_matricula}'
+    
+class Aula (models.Model):
+    turma = models.ForeignKey(Turma, on_delete=models.PROTECT, null=True)
+    disciplina = models.ForeignKey(Disciplina, on_delete=models.PROTECT)
+
+    def __str__(self):
+        return f'{self.turma.sala_turma} - {self.disciplina.nome}'
 
