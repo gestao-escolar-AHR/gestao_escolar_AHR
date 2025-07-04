@@ -1,6 +1,11 @@
 from rest_framework.serializers import ModelSerializer
 
-from .models import Curso, Aluno, Disciplina, Professor, Nota, Matricula
+from .models import Curso, Aluno, Disciplina, Professor, Nota, Matricula, Turma
+
+class TurmaSerializer(ModelSerializer):
+    class Meta:
+        model = Turma
+        fields = '__all__'
 
 class CursoSerializer(ModelSerializer):
     class Meta:

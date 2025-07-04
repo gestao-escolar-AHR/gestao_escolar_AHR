@@ -1,7 +1,8 @@
 from django.contrib import admin
 
-from  .models import Curso, Aluno, Professor, Disciplina, Nota, Matricula
+from  .models import Curso, Aluno, Professor, Disciplina, Nota, Matricula, Turma
 
+admin.site.register(Turma)
 admin.site.register(Curso)
 admin.site.register(Aluno)
 admin.site.register(Professor)

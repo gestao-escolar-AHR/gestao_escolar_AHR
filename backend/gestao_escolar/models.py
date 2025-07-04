@@ -30,6 +30,14 @@ class Professor (models.Model):
     
     def __str__(self):
         return f'{self.nome} - {self.email}'
+    
+class Turma(models.Model):
+    quantidade_alunos = models.IntegerField(default=0)
+    sala_turma = models.CharField(max_length=45)
+    nome_turma = models.CharField(max_length=45)
+
+    def __str__(self):
+        return f'{self.nome_turma} - {self.sala_turma}'
 
 class Disciplina (models.Model):
     nome = models.CharField(max_length=45)
@@ -53,6 +61,7 @@ class Matricula (models.Model):
     aluno = models.ForeignKey(Aluno, on_delete=models.PROTECT)
     curso = models.ForeignKey(Curso, on_delete=models.PROTECT)
     data_matricula = models.DateField(null=True)
+    turma = models.ForeignKey(Turma, on_delete=models.PROTECT, null=True)
 
     def __str__(self):
         return f'{self.aluno.nome} - {self.data_matricula}'
